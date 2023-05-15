@@ -4,9 +4,17 @@ const formidable = require("formidable");
 
 const pdfjs = require("pdfjs-dist");
 
+const cors = require("cors");
+
 const app = express();
 
 const fs = require("fs");
+
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://notes-two-kohl.vercel.app/"],
+  })
+);
 
 function toArrayBuffer(buffer) {
   const arrayBuffer = new ArrayBuffer(buffer.length);
