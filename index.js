@@ -2,7 +2,7 @@ const express = require("express");
 
 const formidable = require("formidable");
 
-const pdfjs = require("pdfjs-dist");
+const pdfjs = require("pdfjs-dist/legacy/build/pdf.js");
 
 const cors = require("cors");
 
