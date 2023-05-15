@@ -1,6 +1,5 @@
 const express = require("express");
 
-
 const formidable = require("formidable");
 
 const pdfjs = require("pdfjs-dist");
@@ -63,6 +62,10 @@ app.post("/pdf", middle, async (req, response) => {
   } catch (error) {
     response.status(400).json("Error parsing pdf");
   }
+});
+
+app.get("/", (req, res) => {
+  res.json("Hello world!");
 });
 
 app.listen(process.env.PORT || 4000, () => {
