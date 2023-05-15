@@ -10,11 +10,7 @@ const app = express();
 
 const fs = require("fs");
 
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "https://notes-two-kohl.vercel.app/"],
-  })
-);
+app.use(cors());
 
 function toArrayBuffer(buffer) {
   const arrayBuffer = new ArrayBuffer(buffer.length);
