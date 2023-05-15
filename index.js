@@ -25,6 +25,8 @@ function toArrayBuffer(buffer) {
 
 app.post("/pdf", middle, async (req, response) => {
   try {
+
+    console.log(req)
     const form = formidable({ multiples: true });
 
     const result = await new Promise((res, rej) => {
