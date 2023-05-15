@@ -8,12 +8,6 @@ const app = express();
 
 const fs = require("fs");
 
-const middle = express.urlencoded({
-  extended: false,
-  limit: 10000,
-  parameterLimit: 2,
-});
-
 function toArrayBuffer(buffer) {
   const arrayBuffer = new ArrayBuffer(buffer.length);
   const view = new Uint8Array(arrayBuffer);
@@ -23,9 +17,11 @@ function toArrayBuffer(buffer) {
   return arrayBuffer;
 }
 
-app.post("/pdf", middle, async (req, response) => {
+app.post("/pdf", async (req, response) => {
   try {
     const form = formidable({ multiples: true });
+
+    console.log(form);
 
     const result = await new Promise((res, rej) => {
       form.parse(req, async (err, fields, files) => {
@@ -58,7 +54,7 @@ app.post("/pdf", middle, async (req, response) => {
       });
     });
 
-    console.log(response);
+    console.log(result);
 
     response.json({ text: response });
   } catch (error) {
