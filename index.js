@@ -66,6 +66,7 @@ app.post("/pdf", async (req, response) => {
 
     response.json({ text: response });
   } catch (error) {
+    console.log(error)
     response.status(400).json("Error parsing pdf");
   }
 });
