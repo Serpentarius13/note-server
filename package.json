@@ -12,6 +12,6 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "formidable": "^2.1.1",
-    "pdfjs-dist": "^3.2.146"
+    "pdfjs-dist": "^2.3.200"
   }
 }
